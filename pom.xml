@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>myproject</artifactId>
+    <artifactId>springboot-example</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <parent>
@@ -20,5 +20,27 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 	</dependencies>
+
+	<repositories>
+        <repository>
+            <id>openshift-repository</id>
+            <url>https://mirror.openshift.com/nexus/content/groups/public</url>
+        </repository>
+    </repositories>
+	
+   <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>Opticca Releases Repository</name>
+            <url>http://nexus-ci-cd.192.168.99.100.nip.io/repository/maven-releases</url>
+            <layout>default</layout>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>Opticca Snapshots Repository</name>
+            <url>http://nexus-ci-cd.192.168.99.100.nip.io/repository/maven-snapshots/</url>
+            <layout>default</layout>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>
